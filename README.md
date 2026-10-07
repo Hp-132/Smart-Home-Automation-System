@@ -2,6 +2,9 @@
 
 A Java smart-home simulator that controls 21 virtual devices across 6 rooms. It started as a **menu-driven Java console app** and was later extended into an **interactive 3D-style (isometric) web interface**, where you control devices by clicking them inside the house.
 
+<img width="1522" height="757" alt="image" src="https://github.com/user-attachments/assets/b9032f78-8f0b-42f4-a845-85954dd50a04" />
+
+
 ---
 
 ## Project Evolution
