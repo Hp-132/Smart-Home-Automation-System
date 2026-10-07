@@ -1,0 +1,18 @@
+# Build output
+out/
+*.class
+sources.txt
+
+# Tests (kept local)
+tests/
+test.sh
+test.bat
+node_modules/
+
+# Archives / IDE / OS
+*.zip
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

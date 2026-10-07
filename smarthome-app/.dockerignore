@@ -1,0 +1,4 @@
+out/
+*.class
+.git/
+tests/

@@ -1,0 +1,56 @@
+// Small stroke icon set (24×24 grid). Drawn for this project.
+const P = {
+  home: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/>',
+  living: '<path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M3 17v-4a2 2 0 0 1 4 0v1h10v-1a2 2 0 0 1 4 0v4Z"/><path d="M5 17v2M19 17v2"/>',
+  kitchen: '<path d="M4 10h16v3a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6Z"/><path d="M2 10h2M20 10h2"/><path d="M9 6c0-1 1-1 1-2M13 6c0-1 1-1 1-2"/>',
+  garage: '<path d="M3 20V9l9-5 9 5v11"/><path d="M7 20v-8h10v8"/><path d="M7 15h10"/>',
+  bedroom: '<path d="M3 19V7"/><path d="M3 15h18v4"/><path d="M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="12" r="1.6"/>',
+  bathroom: '<path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"/><path d="M6 12V6a2 2 0 0 1 3.5-1.3"/><path d="M7 19l-1 2M17 19l1 2"/>',
+  outdoor: '<path d="M12 21v-5"/><path d="M8 16h8l-4-7Z"/><path d="M7 12h10l-5-8Z"/><path d="M3 21h18"/>',
+  light: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.6 1 2.5h6c0-.9.2-1.7 1-2.5A6 6 0 0 0 12 3Z"/>',
+  curtains: '<path d="M3 4h18"/><path d="M5 4v16c2-2 3-6 3-16"/><path d="M19 4v16c-2-2-3-6-3-16"/><path d="M8 20h8" stroke-dasharray="1.5 2"/>',
+  ac: '<rect x="3" y="5" width="18" height="7" rx="2"/><path d="M7 9h10"/><path d="M8 15c0 1.5-1 2-1 3.5M12 15v4M16 15c0 1.5 1 2 1 3.5"/>',
+  heater: '<path d="M8 21c-2-3 2-5 0-8M12 21c-2-3 2-5 0-8M16 21c-2-3 2-5 0-8"/><path d="M5 9V5M9 9V4M15 9V4M19 9V5M4 9h16"/>',
+  tv: '<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  music: '<path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+  vacuum: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="7.5" r=".6" fill="currentColor"/>',
+  fridge: '<rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M6 10h12M9 6v2M9 13v3"/>',
+  smoke: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3.5v2M12 18.5v2"/>',
+  garageDoor: '<path d="M3 21V8l9-5 9 5v13"/><path d="M6 21V11h12v10"/><path d="M6 14h12M6 17h12"/>',
+  energy: '<path d="M13 2 4 14h7l-1 8 9-12h-7Z"/>',
+  lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.2"/>',
+  unlock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/><circle cx="12" cy="16" r="1.2"/>',
+  camera: '<path d="M3 7h13l-2 7H3Z"/><path d="M16 9l5-2v6l-5-2"/><path d="M7 14v4H4"/>',
+  sprinkler: '<path d="M12 21v-6"/><path d="M9 21h6"/><path d="M12 12c-4 0-7-2-8-5M12 12c4 0 7-2 8-5M12 12V4"/><circle cx="4" cy="4" r=".8" fill="currentColor"/><circle cx="20" cy="4" r=".8" fill="currentColor"/>',
+  moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  away: '<path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/>',
+  lightsOff: '<path d="M9 18h6M10 21h4"/><path d="M8.2 5.2A6 6 0 0 1 18 9.5c0 1.4-.5 2.7-1.3 3.7M15 16H9c0-.9-.2-1.7-1-2.5A6 6 0 0 1 6 9.4"/><path d="m3 3 18 18"/>',
+  power: '<path d="M12 3v8"/><path d="M6.3 7a8 8 0 1 0 11.4 0"/>',
+  check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+  alert: '<path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17.2v.1"/>',
+  x: '<path d="M6 6l12 12M18 6 6 18"/>',
+  back: '<path d="M15 5l-7 7 7 7"/>',
+  activity: '<path d="M3 12h4l3-8 4 16 3-8h4"/>',
+  chevron: '<path d="m9 6 6 6-6 6"/>',
+  grid: '<rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.1"/>',
+  shield: '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
+  wifi: '<path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/>',
+  wifiOff: '<path d="m3 3 18 18"/><path d="M8.5 15.5a5 5 0 0 1 7 0M5 12a10 10 0 0 1 5-2.7M14.5 9.6A10 10 0 0 1 19 12M2 8.5a15 15 0 0 1 4.3-2.8M11 5a15 15 0 0 1 11 3.5"/><circle cx="12" cy="19" r="1" fill="currentColor"/>',
+  prev: '<path d="M18 6 9 12l9 6Z"/><path d="M6 6v12"/>',
+  next: '<path d="m6 6 9 6-9 6Z"/><path d="M18 6v12"/>',
+  play: '<path d="M7 4.5v15l12-7.5Z"/>',
+  pause: '<path d="M8 5v14M16 5v14"/>',
+  leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  bolt: '<path d="M13 2 4 14h7l-1 8 9-12h-7Z"/>',
+  layers: '<path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5"/>',
+};
+
+export function icon(name, state) {
+  let key = name;
+  if (name === 'lock' && state && state.locked === false) key = 'unlock';
+  const body = P[key] || P.info;
+  return `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+}

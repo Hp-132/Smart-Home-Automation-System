@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Smart Home</title>
+  <meta name="description" content="Interactive control centre for the Java smart home simulator.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%231f2328'/%3E%3Cpath d='M5 11.5 12 6l7 5.5V18H5Z' fill='none' stroke='%23f0a54a' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/css/app.css">
+  <script>
+    // Apply the saved theme before first paint.
+    try { const t = localStorage.getItem('sh-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#device-list">Skip to device controls</a>
+  <div class="app" id="app" data-loading="true">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4.5 11.5 12 5.5l7.5 6V19h-15Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="14" r="2" fill="currentColor"/></svg>
+        </span>
+        <div class="brand-text"><strong>Smart Home</strong><span>Control centre</span></div>
+      </div>
+
+      <nav class="rooms-nav" id="rooms-nav" aria-label="Rooms"></nav>
+
+      <section class="routines" aria-labelledby="routines-title">
+        <h2 class="section-title" id="routines-title">Routines</h2>
+        <div class="routine-list" id="routines"></div>
+      </section>
+
+      <div class="sidebar-foot">
+        <div class="conn" id="conn" data-state="connecting">
+          <span class="conn-dot"></span><span class="conn-text">Connecting…</span>
+        </div>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme"></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="title-block">
+          <p class="eyebrow" id="today"></p>
+          <h1 id="view-title">Whole house</h1>
+        </div>
+        <div class="top-actions">
+          <span class="sim-badge" tabindex="0" title="Every device is an in-memory Java simulator from the smarthome.devices package. Commands run on the Java backend; no physical hardware is connected.">
+            <span class="sim-dot"></span>Simulator backend
+          </span>
+        </div>
+      </header>
+
+      <div class="banner" id="offline-banner" role="alert" hidden>
+        <span class="banner-icon"></span>
+        <span><strong>Can't reach the smart home server.</strong> Device states shown may be out of date and controls are paused. Retrying automatically…</span>
+      </div>
+
+      <section class="stats" id="stats" aria-label="House summary"></section>
+
+      <section class="stage" aria-label="Interactive house">
+        <div class="stage-head">
+          <button class="chip-btn" id="back-btn" type="button" hidden></button>
+          <div class="stage-caption" id="stage-caption">Tap a room to step inside</div>
+          <div class="seg" id="scene-toggle" role="group" aria-label="Scene lighting (visual only)" title="Changes how the house is drawn. It does not control any device.">
+            <button type="button" data-scene="day"></button>
+            <button type="button" data-scene="evening"></button>
+          </div>
+        </div>
+        <div class="stage-canvas">
+          <svg id="house" class="house" role="img" aria-label="Isometric view of the house. Use the device list for keyboard control." preserveAspectRatio="xMidYMid meet"></svg>
+          <div class="stage-loading" id="stage-loading"><div class="spinner"></div><span>Loading your home…</span></div>
+          <div class="tooltip" id="tooltip" hidden></div>
+        </div>
+        <p class="stage-hint">Click a <b>light</b> or <b>curtain</b> to switch it · click any other device to open its controls</p>
+      </section>
+
+      <section class="activity card" aria-labelledby="activity-title">
+        <div class="card-head">
+          <h2 class="section-title" id="activity-title">Activity</h2>
+          <span class="muted small">Messages returned by the Java devices</span>
+        </div>
+        <ol class="activity-list" id="activity"></ol>
+      </section>
+    </main>
+
+    <aside class="panel" aria-labelledby="panel-title">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow" id="panel-eyebrow">Devices</p>
+          <h2 id="panel-title">All rooms</h2>
+        </div>
+        <span class="count-pill" id="panel-count"></span>
+      </div>
+      <div class="device-list" id="device-list"></div>
+      <p class="panel-note"><span class="sim-dot"></span>All devices run on the Java simulator. Room lighting and animations are visual representations of the reported device state.</p>
+    </aside>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
